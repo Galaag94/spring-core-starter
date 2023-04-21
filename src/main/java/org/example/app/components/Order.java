@@ -13,9 +13,9 @@ public class Order implements ShoppingCart {
     private final List<Product> products;
     private PaymentService paymentService;
 
-    public Order() {
+    public Order(PaymentService paymentService) {
         this.products = new ArrayList<>();
-        this.paymentService = new PaymentServiceImpl();
+        this.paymentService = paymentService;
     }
 
     @Override
