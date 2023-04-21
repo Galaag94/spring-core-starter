@@ -4,6 +4,7 @@ import org.example.app.interfaces.PaymentMethod;
 import org.example.app.interfaces.PaymentService;
 import org.example.app.interfaces.ShoppingCart;
 import org.example.app.models.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
 public class Order implements ShoppingCart {
 
     private final List<Product> products;
-    private PaymentService paymentService;
+    private final PaymentService paymentService;
 
     public Order(PaymentService paymentService) {
         this.products = new ArrayList<>();
